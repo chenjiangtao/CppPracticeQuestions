@@ -1,7 +1,7 @@
 // 描述
 // 编写递归函数 getPower 计算 x 的 y 次幂，在同一个程序中针对整型和实型实现两个重载的函数：
 // int getPower(int x, int y); 当 y < 0 时返回0
-// double getPower(double x, double y);
+// double getPower(double x, int y);
 
 # include<iostream>
 # include <iomanip>
