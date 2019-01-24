@@ -6,8 +6,6 @@
 // 是否支持超线程。
 // 各项信息要求使用位域来表示。通过输出 sizeof(CPU) 来观察该类所占字节数。
 
-
-
 #include <iostream>
 using namespace std;
 
@@ -17,8 +15,8 @@ enum HyperThread {support, notsupport};
 
 class CPU {
 public: 
-    CPU(unsigned frequence, Words length, Core CoreType, HyperThread mode)
-        : frequence(frequence), length(length), CoreType(CoreType), mode(mode) {}
+    CPU(unsigned f, Words l, Core t, HyperThread m)
+        : frequence(f), length(l), CoreType(t), mode(m) {}
     void show() {
         cout<<"Time Frequence: "<<frequence<<" MHz"<<endl;
         cout<<"Core Type: ";
