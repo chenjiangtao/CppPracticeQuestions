@@ -21,7 +21,9 @@ public:
     friend void Y :: g(X *);
     friend class Z;
     friend void h(X *);
-    void geti();
+    int geti() {
+        return i;
+    }
 private: 
     int i;
 };
@@ -46,22 +48,15 @@ void h(X * x) {
 #include <iostream>
 using namespace std;
 
-void X :: geti() {
-    cout<<i<<endl;
-}
-
 int main()
 {
     X x(0);
     Y y;
     Z z;
     y.g(&x);
-    cout<<"函数g调用后x的属性为："; // 1
-    x.geti();
+    cout<<"函数g调用后x的属性为："<<x.geti()<<endl; // 1
     z.f(&x);
-    cout<<"函数f调用后x的属性为："; // 6
-    x.geti();
+    cout<<"函数f调用后x的属性为："<<x.geti()<<endl; // 6
     h(&x);
-    cout<<"函数h调用后x的属性为："; // 16
-    x.geti();
+    cout<<"函数h调用后x的属性为："<<x.geti()<<endl; // 16
 }
