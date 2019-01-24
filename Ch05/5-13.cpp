@@ -56,12 +56,12 @@ int main()
     Y y;
     Z z;
     y.g(&x);
-    cout<<"函数g调用后x为："; // 1
+    cout<<"函数g调用后x的属性为："; // 1
     x.geti();
     z.f(&x);
-    cout<<"函数f调用后x为："; // 6
+    cout<<"函数f调用后x的属性为："; // 6
     x.geti();
     h(&x);
-    cout<<"函数h调用后x为："; // 16
+    cout<<"函数h调用后x的属性为："; // 16
     x.geti();
 }
