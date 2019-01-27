@@ -12,7 +12,7 @@ public:
     Shape() {
         cout<<"新建了一个 Shape 对象"<<endl;
     }
-    ~Shape() {
+    virtual ~Shape() { // 基类的析构函数需要是一个虚函数，否则 delete 时只释放基类不释放子类，可能存在内在泄漏的问题
         cout<<"回收了一个 Shape 对象"<<endl;
     }
     virtual float getArea() { // 这里的 getArea() 需要是一个虚函数
@@ -83,13 +83,17 @@ int main()
 // 新建了一个 Shape 对象
 // 新建了一个 Rectangle 对象
 // The area of the Rectange is: 24
+// 回收了一个 Rectangle 对象
 // 回收了一个 Shape 对象
 // 新建了一个 Shape 对象
 // 新建了一个 Circle 对象
 // The area of the Circle is: 78.5
+// 回收了一个 Circle 对象
 // 回收了一个 Shape 对象
 // 新建了一个 Shape 对象
 // 新建了一个 Rectangle 对象
 // 新建了一个 Square 对象
 // The area of the Square is: 25
+// 回收了一个 Square 对象
+// 回收了一个 Rectangle 对象
 // 回收了一个 Shape 对象
