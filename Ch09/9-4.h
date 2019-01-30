@@ -23,7 +23,7 @@ public:
     DNode<T> &getNext();
     // 输出
     void printNode();
-// private: 
+public: 
     T data;
     DNode<T> *prev;
     DNode<T> *next;
