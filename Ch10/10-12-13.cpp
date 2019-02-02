@@ -46,23 +46,19 @@ int main() {
     copy(l.begin(), l.end(), ostream_iterator<int>(cout, " "));
     cout << endl;
 
-    list<int> l1, l2, l3;
-    list<int> temp = l;
+    list<int> l1(l), l2(l), l3(l); // 创建 copy 的链表
 
-    transform(l.begin(), l.end(), l.begin(), Power1);
-    l1 = l; l = temp;
+    transform(l1.begin(), l1.end(), l1.begin(), Power1);
     cout << "for eacn n in list, output 5^n: " << endl;
     for_each(l1.begin(), l1.end(), printList);
     cout << endl;
 
-    transform(l.begin(), l.end(), l.begin(), Power2);
-    l2 = l; l = temp;
+    transform(l2.begin(), l2.end(), l2.begin(), Power2);
     cout << "for each n in list, output n^7: " << endl;
     for_each(l2.begin(), l2.end(), printList);
     cout << endl;
 
-    transform(l.begin(), l.end(), l.begin(), Power3);
-    l3 = l; l = temp;
+    transform(l3.begin(), l3.end(), l3.begin(), Power3);
     cout << "for each n in list, output n^n: " << endl;
     for_each(l3.begin(), l3.end(), printList);
     cout << endl;
