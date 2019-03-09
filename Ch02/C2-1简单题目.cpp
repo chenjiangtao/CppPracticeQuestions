@@ -33,8 +33,4 @@ int main() {
 	}
 	cout << sum << " " << min << " " << max;
 	return 0; 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7e7dec82ab968471821d608e6e0db021ab8455ba
