@@ -1,5 +1,5 @@
 #include <iostream>
-#include <assert.h>
+#include <ctime>
 using namespace std;
 
 /* ================================= 需要讲的部分 ======================================
@@ -20,16 +20,26 @@ using namespace std;
 * 在 while 循环过程中，如果 num != (int)num，则说明 num 不是整数，将一切返回到最初，并将 x_n + 1 
 * =================================================================================== */
 
+const double CLOCKS_PER_SECOND = ((clock_t)1000);
+
 int main() {
 	while (true) {
-		cout << "请输入小猴子的数量n：";
+		cout << "请输入小猴子的数量n (n <= 35)：";
 		int n;
 		cin >> n;
 		if (n < 1) exit(0);
-		int x_n = 4;
+		if (n > 35) {
+			cout << "超出范围！" << endl;
+			exit(0);
+		}
+		int x_n = 1;
 		int num4old = x_n;
 		int i = 0;
 		float num = x_n;
+
+		clock_t start,finish;
+        start = clock();
+
 		while (i < n){
 			num = (float)num * 5 / 4 + 1;
 			num4old++;
@@ -41,8 +51,15 @@ int main() {
 				num4old = x_n;
 			}
 		}
-		cout << "原先至少有 " << num <<" 个桃子"<< endl;
+		
+		finish = clock();
+
+		cout.setf(ios_base::fixed,ios_base::floatfield);
+		cout << "最后一只猴子留给老猴子 " << x_n << " 个桃子" << endl;
+		cout << "原先至少有 " << (int)num <<" 个桃子"<< endl;
 		cout << "老猴子至少分到 "<< num4old <<" 个桃子"<< endl;
+		cout << "算法所需时间为：" << (double)(finish - start) / CLOCKS_PER_SECOND << "s" << endl;
+		cout << endl;
 	}
 	return 0; 
 } 
