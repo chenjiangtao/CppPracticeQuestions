@@ -25,7 +25,7 @@ int main() {
         int i = 0;
         while (i < n) {
             if ((next - 1) % 5 == 0) {
-                next = (next - 1) * 4 / 5;
+                next = (next - 1) / 5 * 4;
                 num4old++;
                 i++;
             }

@@ -42,7 +42,7 @@ int main() {
 		int i = 0;
 		while (i < n){
 			if (num % 4 == 0) {
-				num = num * 5 / 4 + 1;
+				num = num / 4 * 5 + 1;
 				num4old++;
 				i++;
 			}
